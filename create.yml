@@ -3,8 +3,8 @@
   vars:
     resource_group_name: "akasurde_rg_2"
     resource_group_location: "eastus"
-  tasks:
-  - name: Create a resource group named {{ resource_group_name }}
-    azure_rm_resourcegroup:
-      name: "{{ resource_group_name }}"
-      location: "{{ resource_group_location }}"
+  roles:
+     - role: cloud.azure_roles.resource_group
+       operation: "create"
+       azure_region:  "{{ resource_group_location }}"
+       azure_resource_group: "{{ resource_group_name }}"
