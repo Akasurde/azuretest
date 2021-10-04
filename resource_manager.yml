@@ -5,6 +5,6 @@
     resource_group_location: "eastus"
   roles:
      - role: cloud.azure_roles.resource_group
-       operation: "create"
+       operation: "{{ operation }}"
        azure_region:  "{{ resource_group_location }}"
        azure_resource_group: "{{ resource_group_name }}"
